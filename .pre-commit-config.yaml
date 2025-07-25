@@ -1,0 +1,46 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  # Standard hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: debug-statements
+      - id: mixed-line-ending
+      - id: fix-byte-order-marker
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "v3.1.0"
+    hooks:
+      # Use Prettier to lint XML files because, well.. its rules are prettier than most linters, as the name implies.
+      # Also we use it in the UI, so it's familiar.
+      - id: prettier
+        additional_dependencies:
+          - "prettier@3.1.0"
+          - "@prettier/plugin-xml@3.3.1"
+        files: \.(xml|xacro)$
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.1
+    hooks:
+      - id: codespell
+
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.18.1
+    hooks:
+      - id: markdownlint-cli2
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.3
+    hooks:
+      - id: ruff-check
+        args: [ --fix ]
+      - id: ruff-format

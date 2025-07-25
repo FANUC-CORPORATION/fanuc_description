@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<robot name="crx30ia" xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include
+    filename="$(find fanuc_crx_description)/urdf/crx30ia_urdf_macro.xacro"
+  />
+
+  <link name="world" />
+  <link name="ee_link" />
+  <xacro:crx30ia parent="world" child="ee_link">
+    <origin xyz="0 0 .75" rpy="0 0 0" />
+  </xacro:crx30ia>
+</robot>
