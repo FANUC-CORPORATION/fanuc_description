@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <material name="FANUC_Black">
+    <color rgba="0 0 0 1.0" />
+  </material>
+  <material name="FANUC_Yellow">
+    <color rgba="1.00 0.84 0.01 1.00" />
+  </material>
+  <material name="FANUC_Green">
+    <color rgba="0.43 0.68 0.26 1.00" />
+  </material>
+  <material name="FANUC_White">
+    <color rgba="0.84 0.84 0.82 1.00" />
+  </material>
+</robot>

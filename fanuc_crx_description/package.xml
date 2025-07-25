@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<!--
+SPDX-FileCopyrightText: 2025, FANUC America Corporation
+SPDX-FileCopyrightText: 2025, FANUC CORPORATION
+SPDX-License-Identifier: Apache-2.0
+-->
+<package format="3">
+  <name>fanuc_crx_description</name>
+  <version>1.0.0</version>
+  <description>CRX series kinematics information.</description>
+
+  <maintainer
+    email="fanuc-ros-maintainer@fanuc.co.jp"
+  >FANUC CORPORATION</maintainer>
+
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
