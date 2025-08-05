@@ -10,7 +10,7 @@ This repository contains description files and meshes for FANUC robot arms.
 
 ## Installation
 
-See the [fanuc_driver README](https://github.com/FANUC-CORPORATION/fanuc_driver) for instructions.
+See the [FANUC ROS 2 Driver Documentation](https://fanuc-corporation.github.io/fanuc_driver_doc/) for instructions.
 
 ## Repository structure
 
