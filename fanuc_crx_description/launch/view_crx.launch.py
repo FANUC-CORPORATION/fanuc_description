@@ -24,7 +24,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "robot_model",
             description="The robot model to visualize (required)",
-            choices=["crx5ia", "crx10ia", "crx10ia_l", "crx20ia_l", "crx30ia"],
+            choices=["crx5ia", "crx10ia", "crx10ia_l", "crx10ia_lp", "crx20ia_l", "crx30ia"],
         )
     ]
     robot_model = LaunchConfiguration("robot_model")

@@ -5,10 +5,6 @@ SPDX-FileCopyrightText: 2025, FANUC CORPORATION
 SPDX-License-Identifier: Apache-2.0
 -->
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
-  <xacro:include
-    filename="$(find fanuc_crx_description)/urdf/fanuc_common_urdf_macro.xacro"
-  />
-
   <xacro:macro
     name="crx30ia"
     params="prefix=''
@@ -68,7 +64,6 @@ SPDX-License-Identifier: Apache-2.0
             filename="package://fanuc_crx_description/meshes/crx30ia/visual/base.dae"
           />
         </geometry>
-        <material name="FANUC_Black" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -101,7 +96,6 @@ SPDX-License-Identifier: Apache-2.0
             filename="package://fanuc_crx_description/meshes/crx30ia/visual/j1.dae"
           />
         </geometry>
-        <material name="FANUC_White" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -134,7 +128,6 @@ SPDX-License-Identifier: Apache-2.0
             filename="package://fanuc_crx_description/meshes/crx30ia/visual/j2.dae"
           />
         </geometry>
-        <material name="FANUC_White" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -167,7 +160,6 @@ SPDX-License-Identifier: Apache-2.0
             filename="package://fanuc_crx_description/meshes/crx30ia/visual/j3.dae"
           />
         </geometry>
-        <material name="FANUC_White" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -200,7 +192,6 @@ SPDX-License-Identifier: Apache-2.0
             filename="package://fanuc_crx_description/meshes/crx30ia/visual/j4.dae"
           />
         </geometry>
-        <material name="FANUC_White" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -233,7 +224,6 @@ SPDX-License-Identifier: Apache-2.0
             filename="package://fanuc_crx_description/meshes/crx30ia/visual/j5.dae"
           />
         </geometry>
-        <material name="FANUC_White" />
       </visual>
       <collision>
         <origin xyz="0 -${l_5} 0" rpy="0 0 0" />
@@ -266,7 +256,6 @@ SPDX-License-Identifier: Apache-2.0
             filename="package://fanuc_crx_description/meshes/crx30ia/visual/j6.dae"
           />
         </geometry>
-        <material name="FANUC_Black" />
       </visual>
       <collision>
         <origin xyz="${l_6} 0 0" rpy="0 0 0" />
