@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<robot name="m10_12-14d" xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include
+    filename="$(find fanuc_m10_description)/urdf/m10_12-14d_urdf_macro.xacro"
+  />
+
+  <link name="world" />
+  <link name="ee_link" />
+  <xacro:m10_12-14d parent="world" child="ee_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:m10_12-14d>
+</robot>

@@ -6,9 +6,9 @@ SPDX-FileCopyrightText: 2025, FANUC CORPORATION
 SPDX-License-Identifier: Apache-2.0
 -->
 <package format="3">
-  <name>fanuc_r1000ia_description</name>
+  <name>fanuc_m10_description</name>
   <version>1.0.3</version>
-  <description>R-1000iA series kinematics information.</description>
+  <description>M-10 series kinematics information.</description>
 
   <maintainer
     email="fanuc-ros-maintainer@fanuc.co.jp"
