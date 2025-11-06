@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<robot name="r2000ic_125l" xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include
+    filename="$(find fanuc_r2000_description)/urdf/r2000ic_125l_urdf_macro.xacro"
+  />
+
+  <link name="world" />
+  <link name="ee_link" />
+  <xacro:r2000ic_125l parent="world" child="ee_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:r2000ic_125l>
+</robot>
