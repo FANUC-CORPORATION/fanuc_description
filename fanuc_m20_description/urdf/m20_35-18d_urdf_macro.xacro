@@ -1,0 +1,380 @@
+<?xml version="1.0" ?>
+<!--
+SPDX-FileCopyrightText: 2025, FANUC America Corporation
+SPDX-FileCopyrightText: 2025, FANUC CORPORATION
+SPDX-License-Identifier: Apache-2.0
+-->
+<!-- URDF for M-20/35-18D(M-20iD/35) -->
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:macro
+    name="m20_35-18d"
+    params="prefix=''
+            parent
+            *origin
+            child"
+  >
+
+    <xacro:property name="j1_lower_limit" value="${radians(-185)}" />
+    <xacro:property name="j2_lower_limit" value="${radians(-100)}" />
+    <xacro:property name="j3_lower_limit" value="${radians(-90)}" />
+    <xacro:property name="j4_lower_limit" value="${radians(-200)}" />
+    <xacro:property name="j5_lower_limit" value="${radians(-179.999)}" />
+    <xacro:property name="j6_lower_limit" value="${radians(-450)}" />
+
+    <xacro:property name="j1_upper_limit" value="${radians(185)}" />
+    <xacro:property name="j2_upper_limit" value="${radians(160)}" />
+    <xacro:property name="j3_upper_limit" value="${radians(220)}" />
+    <xacro:property name="j4_upper_limit" value="${radians(200)}" />
+    <xacro:property name="j5_upper_limit" value="${radians(179.999)}" />
+    <xacro:property name="j6_upper_limit" value="${radians(450)}" />
+
+    <xacro:property name="j1_effort_limit" value="7000" />
+    <xacro:property name="j2_effort_limit" value="9000" />
+    <xacro:property name="j3_effort_limit" value="4000" />
+    <xacro:property name="j4_effort_limit" value="600" />
+    <xacro:property name="j5_effort_limit" value="500" />
+    <xacro:property name="j6_effort_limit" value="300" />
+
+    <xacro:property name="j1_velocity_limit" value="${radians(180)}" />
+    <xacro:property name="j2_velocity_limit" value="${radians(180)}" />
+    <xacro:property name="j3_velocity_limit" value="${radians(200)}" />
+    <xacro:property name="j4_velocity_limit" value="${radians(350)}" />
+    <xacro:property name="j5_velocity_limit" value="${radians(350)}" />
+    <xacro:property name="j6_velocity_limit" value="${radians(400)}" />
+
+    <!-- links -->
+    <link name="${prefix}base_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/visual/base.dae"
+          />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/collision/base.stl"
+          />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value=" 45.6" />
+        <origin xyz="-.0767  .00288  .109" />
+        <inertia
+          ixx=" .494"
+          ixy=" .0289"
+          ixz=" .0136"
+          iyy=" 1.09"
+          iyz=" .0000534"
+          izz=" 1.15"
+        />
+      </inertial>
+    </link>
+
+    <link name="${prefix}J1_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/visual/j1.dae"
+          />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/collision/j1.stl"
+          />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value=" 62.5" />
+        <origin xyz=" .0158 -.0106 -.0831" />
+        <inertia
+          ixx=" 1.34"
+          ixy=" .132"
+          ixz="-.0414"
+          iyy=" 1.1"
+          iyz="-.107"
+          izz=" 1.29"
+        />
+      </inertial>
+    </link>
+
+    <link name="${prefix}J2_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/visual/j2.dae"
+          />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/collision/j2.stl"
+          />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value=" 65.4" />
+        <origin xyz="-.0343 -.172  .38" />
+        <inertia
+          ixx=" 4.83"
+          ixy="-.0804"
+          ixz=" .045"
+          iyy=" 4.96"
+          iyz="-.117"
+          izz=" .533"
+        />
+      </inertial>
+    </link>
+
+    <link name="${prefix}J3_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/visual/j3.dae"
+          />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/collision/j3.stl"
+          />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value=" 53.9" />
+        <origin xyz=" .135  .0118  .102" />
+        <inertia
+          ixx=" .941"
+          ixy="-.0872"
+          ixz="-.293"
+          iyy=" 1.14"
+          iyz="-.0316"
+          izz=" 1.1"
+        />
+      </inertial>
+    </link>
+
+    <link name="${prefix}J4_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/visual/j4.dae"
+          />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/collision/j4.stl"
+          />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value=" 20.1" />
+        <origin xyz=" .585 -.0483 -.00034" />
+        <inertia
+          ixx=" .0761"
+          ixy=" .0523"
+          ixz="-.001"
+          iyy=" .645"
+          iyz="-.0000207"
+          izz=" .655"
+        />
+      </inertial>
+    </link>
+
+    <link name="${prefix}J5_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/visual/j5.dae"
+          />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/collision/j5.stl"
+          />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value=" 1.97" />
+        <origin xyz=" .0276 -.0121  .000000522" />
+        <inertia
+          ixx=" .00392"
+          ixy="-.000781"
+          ixz=" .0000000337"
+          iyy=" .0046"
+          iyz=" .00000000331"
+          izz=" .00408"
+        />
+      </inertial>
+    </link>
+
+    <link name="${prefix}J6_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/visual/j6.dae"
+          />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://fanuc_m20_description/meshes/m20_35-18d/collision/j6.stl"
+          />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value=" .555" />
+        <origin xyz=" .0581 -.000000509  .000000147" />
+        <inertia
+          ixx=" .000582"
+          ixy="-.00000000699"
+          ixz=" .00000000189"
+          iyy=" .000431"
+          iyz=" .0000000226"
+          izz=" .00043"
+        />
+      </inertial>
+    </link>
+
+    <!-- joints -->
+    <joint name="${prefix}J1" type="revolute">
+      <origin xyz=" 0  0  .425" rpy="0 0 0" />
+      <parent link="${prefix}base_link" />
+      <child link="${prefix}J1_link" />
+      <axis xyz=" 0  0  1" />
+      <limit
+        lower="${j1_lower_limit}"
+        upper="${j1_upper_limit}"
+        effort="${j1_effort_limit}"
+        velocity="${j1_velocity_limit}"
+      />
+    </joint>
+
+    <joint name="${prefix}J2" type="revolute">
+      <origin xyz=" .075  0  0" rpy="0 0 0" />
+      <parent link="${prefix}J1_link" />
+      <child link="${prefix}J2_link" />
+      <axis xyz=" 0  1  0" />
+      <limit
+        lower="${j2_lower_limit}"
+        upper="${j2_upper_limit}"
+        effort="${j2_effort_limit}"
+        velocity="${j2_velocity_limit}"
+      />
+    </joint>
+
+    <joint name="${prefix}J3" type="revolute">
+      <origin xyz=" 0  0  .84" rpy="0 0 0" />
+      <parent link="${prefix}J2_link" />
+      <child link="${prefix}J3_link" />
+      <axis xyz=" 0 -1  0" />
+      <limit
+        lower="${j3_lower_limit}"
+        upper="${j3_upper_limit}"
+        effort="${j3_effort_limit}"
+        velocity="${j3_velocity_limit}"
+      />
+    </joint>
+
+    <joint name="${prefix}J4" type="revolute">
+      <origin xyz=" 0  0  .215" rpy="0 0 0" />
+      <parent link="${prefix}J3_link" />
+      <child link="${prefix}J4_link" />
+      <axis xyz="-1  0  0" />
+      <limit
+        lower="${j4_lower_limit}"
+        upper="${j4_upper_limit}"
+        effort="${j4_effort_limit}"
+        velocity="${j4_velocity_limit}"
+      />
+    </joint>
+
+    <joint name="${prefix}J5" type="revolute">
+      <origin xyz=" .89  0  0" rpy="0 0 0" />
+      <parent link="${prefix}J4_link" />
+      <child link="${prefix}J5_link" />
+      <axis xyz=" 0 -1  0" />
+      <limit
+        lower="${j5_lower_limit}"
+        upper="${j5_upper_limit}"
+        effort="${j5_effort_limit}"
+        velocity="${j5_velocity_limit}"
+      />
+    </joint>
+
+    <joint name="${prefix}J6" type="revolute">
+      <origin xyz=" 0  0  0" rpy="0 0 0" />
+      <parent link="${prefix}J5_link" />
+      <child link="${prefix}J6_link" />
+      <axis xyz="-1  0  0" />
+      <limit
+        lower="${j6_lower_limit}"
+        upper="${j6_upper_limit}"
+        effort="${j6_effort_limit}"
+        velocity="${j6_velocity_limit}"
+      />
+    </joint>
+
+    <!-- world coords -->
+    <link name="${prefix}wbase" />
+    <joint name="${prefix}base_link-wbase" type="fixed">
+      <origin xyz=" 0  0  .425" rpy="0 0 0" />
+      <parent link="${prefix}base_link" />
+      <child link="${prefix}wbase" />
+    </joint>
+
+    <!-- flange coords -->
+    <link name="${prefix}flange" />
+    <joint name="${prefix}J6-flange" type="fixed">
+      <origin xyz=" .09  0  0" rpy="0 0 0" />
+      <parent link="${prefix}J6_link" />
+      <child link="${prefix}flange" />
+    </joint>
+
+    <!-- FANUC flange coords -->
+    <link name="${prefix}fanuc_flange" />
+    <joint name="${prefix}flange-fanuc_flange" type="fixed">
+      <origin xyz="0 0 0" rpy="${radians( 180)} ${radians(-90)} ${radians( 0)}" />
+      <parent link="${prefix}flange" />
+      <child link="${prefix}fanuc_flange" />
+    </joint>
+
+    <!-- Attach to parent -->
+    <joint name="${prefix}base_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="${prefix}base_link" />
+    </joint>
+
+    <!-- Attach child -->
+    <joint name="${prefix}child_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}flange" />
+      <child link="${child}" />
+    </joint>
+  </xacro:macro>
+</robot>
