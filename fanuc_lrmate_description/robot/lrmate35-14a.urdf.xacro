@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<robot name="lrmate35-14a" xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include
+    filename="$(find fanuc_lrmate_description)/urdf/lrmate35-14a_urdf_macro.xacro"
+  />
+
+  <link name="world" />
+  <link name="ee_link" />
+  <xacro:lrmate35-14a parent="world" child="ee_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:lrmate35-14a>
+</robot>
