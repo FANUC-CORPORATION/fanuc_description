@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!--
-SPDX-FileCopyrightText: 2025, FANUC America Corporation
-SPDX-FileCopyrightText: 2025, FANUC CORPORATION
+SPDX-FileCopyrightText: 2025-2026, FANUC America Corporation
+SPDX-FileCopyrightText: 2025-2026, FANUC CORPORATION
 SPDX-License-Identifier: Apache-2.0
 -->
 <!-- URDF for M-20/25-18D (M-20iD/25) -->
@@ -18,29 +18,29 @@ SPDX-License-Identifier: Apache-2.0
     <xacro:property name="j2_lower_limit" value="${radians(-100)}" />
     <xacro:property name="j3_lower_limit" value="${radians(-90)}" />
     <xacro:property name="j4_lower_limit" value="${radians(-200)}" />
-    <xacro:property name="j5_lower_limit" value="${radians(-180)}" />
+    <xacro:property name="j5_lower_limit" value="${radians(-179.999)}" />
     <xacro:property name="j6_lower_limit" value="${radians(-450)}" />
 
-    <xacro:property name="j1_upper_limit" value="${radians( 185)}" />
-    <xacro:property name="j2_upper_limit" value="${radians( 160)}" />
-    <xacro:property name="j3_upper_limit" value="${radians( 220)}" />
-    <xacro:property name="j4_upper_limit" value="${radians( 200)}" />
-    <xacro:property name="j5_upper_limit" value="${radians( 180)}" />
-    <xacro:property name="j6_upper_limit" value="${radians( 450)}" />
+    <xacro:property name="j1_upper_limit" value="${radians(185)}" />
+    <xacro:property name="j2_upper_limit" value="${radians(160)}" />
+    <xacro:property name="j3_upper_limit" value="${radians(220)}" />
+    <xacro:property name="j4_upper_limit" value="${radians(200)}" />
+    <xacro:property name="j5_upper_limit" value="${radians(179.999)}" />
+    <xacro:property name="j6_upper_limit" value="${radians(450)}" />
 
-    <xacro:property name="j1_effort_limit" value=" 7000" />
-    <xacro:property name="j2_effort_limit" value=" 8000" />
-    <xacro:property name="j3_effort_limit" value=" 4000" />
-    <xacro:property name="j4_effort_limit" value=" 300" />
-    <xacro:property name="j5_effort_limit" value=" 300" />
-    <xacro:property name="j6_effort_limit" value=" 200" />
+    <xacro:property name="j1_effort_limit" value="7000" />
+    <xacro:property name="j2_effort_limit" value="8000" />
+    <xacro:property name="j3_effort_limit" value="4000" />
+    <xacro:property name="j4_effort_limit" value="300" />
+    <xacro:property name="j5_effort_limit" value="300" />
+    <xacro:property name="j6_effort_limit" value="200" />
 
-    <xacro:property name="j1_velocity_limit" value="${radians( 210)}" />
-    <xacro:property name="j2_velocity_limit" value="${radians( 210)}" />
-    <xacro:property name="j3_velocity_limit" value="${radians( 265)}" />
-    <xacro:property name="j4_velocity_limit" value="${radians( 420)}" />
-    <xacro:property name="j5_velocity_limit" value="${radians( 420)}" />
-    <xacro:property name="j6_velocity_limit" value="${radians( 720)}" />
+    <xacro:property name="j1_velocity_limit" value="${radians(210)}" />
+    <xacro:property name="j2_velocity_limit" value="${radians(210)}" />
+    <xacro:property name="j3_velocity_limit" value="${radians(265)}" />
+    <xacro:property name="j4_velocity_limit" value="${radians(420)}" />
+    <xacro:property name="j5_velocity_limit" value="${radians(420)}" />
+    <xacro:property name="j6_velocity_limit" value="${radians(720)}" />
 
     <!-- links -->
     <link name="${prefix}base_link">
@@ -61,15 +61,15 @@ SPDX-License-Identifier: Apache-2.0
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 60" />
-        <origin xyz="-.003  .0008  .1" />
+        <mass value=" 45.8" />
+        <origin xyz="-.0767  .00288  .109" />
         <inertia
-          ixx=" .8"
-          ixy="-.002"
-          ixz="-.0006"
-          iyy=" .8"
-          iyz="-.005"
-          izz=" .9"
+          ixx=" .497"
+          ixy=" .029"
+          ixz=" .0137"
+          iyy=" 1.1"
+          iyz=" .0000537"
+          izz=" 1.16"
         />
       </inertial>
     </link>
@@ -92,15 +92,15 @@ SPDX-License-Identifier: Apache-2.0
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 90" />
-        <origin xyz=" .03 -.004 -.05" />
+        <mass value=" 62.8" />
+        <origin xyz=" .0158 -.0106 -.0831" />
         <inertia
-          ixx=" 1"
-          ixy="-.3"
-          ixz=" .09"
-          iyy=" 1"
-          iyz="-.04"
-          izz=" 2"
+          ixx=" 1.35"
+          ixy=" .133"
+          ixz="-.0417"
+          iyy=" 1.11"
+          iyz="-.108"
+          izz=" 1.3"
         />
       </inertial>
     </link>
@@ -123,15 +123,15 @@ SPDX-License-Identifier: Apache-2.0
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 50" />
-        <origin xyz="-.04 -.2  .4" />
+        <mass value=" 65.8" />
+        <origin xyz="-.0343 -.172  .38" />
         <inertia
-          ixx=" 5"
-          ixy=" .04"
-          ixz=" .04"
-          iyy=" 6"
-          iyz=" .4"
-          izz=" .4"
+          ixx=" 4.86"
+          ixy="-.0809"
+          ixz=" .0453"
+          iyy=" 4.98"
+          iyz="-.118"
+          izz=" .536"
         />
       </inertial>
     </link>
@@ -154,15 +154,15 @@ SPDX-License-Identifier: Apache-2.0
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 40" />
-        <origin xyz=" .1  .02  .1" />
+        <mass value=" 52.9" />
+        <origin xyz=" .134  .00796  .103" />
         <inertia
-          ixx=" .6"
-          ixy=" .01"
-          ixz=" .3"
-          iyy=" .8"
-          iyz=" .005"
-          izz=" .6"
+          ixx=" .901"
+          ixy="-.0784"
+          ixz="-.294"
+          iyy=" 1.13"
+          iyz="-.0385"
+          izz=" 1.06"
         />
       </inertial>
     </link>
@@ -185,15 +185,15 @@ SPDX-License-Identifier: Apache-2.0
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 20" />
-        <origin xyz=" .6 -.06 -.002" />
+        <mass value=" 20.2" />
+        <origin xyz=" .586 -.0481 -.000358" />
         <inertia
-          ixx=" .06"
-          ixy="-.07"
-          ixz=" .008"
-          iyy=" .6"
-          iyz=" .00002"
-          izz=" .6"
+          ixx=" .0769"
+          ixy=" .053"
+          ixz="-.00106"
+          iyy=" .647"
+          iyz="-.0000313"
+          izz=" .656"
         />
       </inertial>
     </link>
@@ -216,15 +216,15 @@ SPDX-License-Identifier: Apache-2.0
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 4" />
-        <origin xyz=" .02 -.04 -.0001" />
+        <mass value=" 1.98" />
+        <origin xyz=" .0276 -.0121  .000000522" />
         <inertia
-          ixx=" .01"
-          ixy=" .003"
-          ixz="-.00001"
-          iyy=" .01"
-          iyz="-.00004"
-          izz=" .01"
+          ixx=" .00394"
+          ixy="-.000785"
+          ixz=" .0000000339"
+          iyy=" .00462"
+          iyz=" .00000000332"
+          izz=" .0041"
         />
       </inertial>
     </link>
@@ -247,15 +247,15 @@ SPDX-License-Identifier: Apache-2.0
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 1" />
-        <origin xyz=" .06  0  0" />
+        <mass value=" .558" />
+        <origin xyz=" .0581 -.000000509  .000000147" />
         <inertia
-          ixx=" .001"
-          ixy=" 0"
-          ixz=" 0"
-          iyy=" .0008"
-          iyz=" .0000004"
-          izz=" .0008"
+          ixx=" .000585"
+          ixy="-.00000000703"
+          ixz=" .0000000019"
+          iyy=" .000433"
+          iyz=" .0000000227"
+          izz=" .000433"
         />
       </inertial>
     </link>
@@ -353,6 +353,14 @@ SPDX-License-Identifier: Apache-2.0
       <origin xyz=" .09  0  0" rpy="0 0 0" />
       <parent link="${prefix}J6_link" />
       <child link="${prefix}flange" />
+    </joint>
+
+    <!-- FANUC flange coords -->
+    <link name="${prefix}fanuc_flange" />
+    <joint name="${prefix}flange-fanuc_flange" type="fixed">
+      <origin xyz="0 0 0" rpy="${radians( 180)} ${radians(-90)} ${radians( 0)}" />
+      <parent link="${prefix}flange" />
+      <child link="${prefix}fanuc_flange" />
     </joint>
 
     <!-- Attach to parent -->
