@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!--
-SPDX-FileCopyrightText: 2025, FANUC America Corporation
-SPDX-FileCopyrightText: 2025, FANUC CORPORATION
+SPDX-FileCopyrightText: 2025-2026, FANUC America Corporation
+SPDX-FileCopyrightText: 2025-2026, FANUC CORPORATION
 SPDX-License-Identifier: Apache-2.0
 -->
 <!-- URDF for CRX-10iA/L Paint -->
@@ -14,33 +14,33 @@ SPDX-License-Identifier: Apache-2.0
             child"
   >
 
-    <xacro:property name="j1_lower_limit" value="${radians(-179.9)}" />
-    <xacro:property name="j2_lower_limit" value="${radians(-179.9)}" />
+    <xacro:property name="j1_lower_limit" value="${radians(-180)}" />
+    <xacro:property name="j2_lower_limit" value="${radians(-180)}" />
     <xacro:property name="j3_lower_limit" value="${radians(-270)}" />
     <xacro:property name="j4_lower_limit" value="${radians(-190)}" />
-    <xacro:property name="j5_lower_limit" value="${radians(-179.9)}" />
+    <xacro:property name="j5_lower_limit" value="${radians(-180)}" />
     <xacro:property name="j6_lower_limit" value="${radians(-225)}" />
 
-    <xacro:property name="j1_upper_limit" value="${radians( 179.9)}" />
-    <xacro:property name="j2_upper_limit" value="${radians( 179.9)}" />
-    <xacro:property name="j3_upper_limit" value="${radians( 270)}" />
-    <xacro:property name="j4_upper_limit" value="${radians( 190)}" />
-    <xacro:property name="j5_upper_limit" value="${radians( 179.9)}" />
-    <xacro:property name="j6_upper_limit" value="${radians( 225)}" />
+    <xacro:property name="j1_upper_limit" value="${radians(180)}" />
+    <xacro:property name="j2_upper_limit" value="${radians(180)}" />
+    <xacro:property name="j3_upper_limit" value="${radians(270)}" />
+    <xacro:property name="j4_upper_limit" value="${radians(190)}" />
+    <xacro:property name="j5_upper_limit" value="${radians(180)}" />
+    <xacro:property name="j6_upper_limit" value="${radians(225)}" />
 
-    <xacro:property name="j1_effort_limit" value="0" />
-    <xacro:property name="j2_effort_limit" value="0" />
-    <xacro:property name="j3_effort_limit" value="0" />
-    <xacro:property name="j4_effort_limit" value="0" />
-    <xacro:property name="j5_effort_limit" value="0" />
-    <xacro:property name="j6_effort_limit" value="0" />
+    <xacro:property name="j1_effort_limit" value="700" />
+    <xacro:property name="j2_effort_limit" value="700" />
+    <xacro:property name="j3_effort_limit" value="400" />
+    <xacro:property name="j4_effort_limit" value="80" />
+    <xacro:property name="j5_effort_limit" value="70" />
+    <xacro:property name="j6_effort_limit" value="70" />
 
-    <xacro:property name="j1_velocity_limit" value="${radians( 120)}" />
-    <xacro:property name="j2_velocity_limit" value="${radians( 120)}" />
-    <xacro:property name="j3_velocity_limit" value="${radians( 180)}" />
-    <xacro:property name="j4_velocity_limit" value="${radians( 180)}" />
-    <xacro:property name="j5_velocity_limit" value="${radians( 180)}" />
-    <xacro:property name="j6_velocity_limit" value="${radians( 180)}" />
+    <xacro:property name="j1_velocity_limit" value="${radians(120)}" />
+    <xacro:property name="j2_velocity_limit" value="${radians(120)}" />
+    <xacro:property name="j3_velocity_limit" value="${radians(180)}" />
+    <xacro:property name="j4_velocity_limit" value="${radians(180)}" />
+    <xacro:property name="j5_velocity_limit" value="${radians(180)}" />
+    <xacro:property name="j6_velocity_limit" value="${radians(180)}" />
 
     <!-- links -->
     <link name="${prefix}base_link">
@@ -57,10 +57,21 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_crx_description/meshes/crx10ia_lp/collision/base.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
+      <inertial>
+        <mass value=" 14.6" />
+        <origin xyz="-.0126 -.000000186  .12" />
+        <inertia
+          ixx=" .17"
+          ixy="-.000000352"
+          ixz=" .00497"
+          iyy=" .17"
+          iyz="-.000000286"
+          izz=" .149"
+        />
+      </inertial>
     </link>
 
     <link name="${prefix}J1_link">
@@ -77,10 +88,21 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_crx_description/meshes/crx10ia_lp/collision/j1.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
+      <inertial>
+        <mass value=" 5.2" />
+        <origin xyz="-.0000000152 -.0217 -.0384" />
+        <inertia
+          ixx=" .0348"
+          ixy="-.0000000133"
+          ixz=" .0000000233"
+          iyy=" .03"
+          iyz=" .00228"
+          izz=" .0226"
+        />
+      </inertial>
     </link>
 
     <link name="${prefix}J2_link">
@@ -97,10 +119,21 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_crx_description/meshes/crx10ia_lp/collision/j2.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
+      <inertial>
+        <mass value=" 18.9" />
+        <origin xyz=" .0000000891 -.186  .352" />
+        <inertia
+          ixx=" 1.11"
+          ixy="-.000000259"
+          ixz="-.000000118"
+          iyy=" 1.08"
+          iyz="-.0361"
+          izz=" .085"
+        />
+      </inertial>
     </link>
 
     <link name="${prefix}J3_link">
@@ -117,10 +150,21 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_crx_description/meshes/crx10ia_lp/collision/j3.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
+      <inertial>
+        <mass value=" 2.66" />
+        <origin xyz=" .0385 -.00854  .00000105" />
+        <inertia
+          ixx=" .00634"
+          ixy="-.000437"
+          ixz="-.000000195"
+          iyy=" .0118"
+          iyz="-.000000107"
+          izz=" .0121"
+        />
+      </inertial>
     </link>
 
     <link name="${prefix}J4_link">
@@ -137,10 +181,21 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_crx_description/meshes/crx10ia_lp/collision/j4.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
+      <inertial>
+        <mass value=" 3.88" />
+        <origin xyz=" .378 -.00456 -.000000088" />
+        <inertia
+          ixx=" .00653"
+          ixy=" .00105"
+          ixz="-.0000000212"
+          iyy=" .0604"
+          iyz=" .00000000854"
+          izz=" .0609"
+        />
+      </inertial>
     </link>
 
     <link name="${prefix}J5_link">
@@ -157,10 +212,21 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_crx_description/meshes/crx10ia_lp/collision/j5.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
+      <inertial>
+        <mass value=" 1.43" />
+        <origin xyz=" .0227 -.135 -.000000151" />
+        <inertia
+          ixx=" .00278"
+          ixy=" .000258"
+          ixz="-.00000000906"
+          iyy=" .00316"
+          iyz="-.00000000128"
+          izz=" .00395"
+        />
+      </inertial>
     </link>
 
     <link name="${prefix}J6_link">
@@ -177,10 +243,21 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_crx_description/meshes/crx10ia_lp/collision/j6.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
+      <inertial>
+        <mass value=" .33" />
+        <origin xyz=" .129  4.81E-19 -4.86E-19" />
+        <inertia
+          ixx=" .000339"
+          ixy=" 2.48E-19"
+          ixz="-4.5E-20"
+          iyy=" .00026"
+          iyz=" 1.38E-20"
+          izz=" .00026"
+        />
+      </inertial>
     </link>
 
     <!-- joints -->
@@ -276,6 +353,14 @@ SPDX-License-Identifier: Apache-2.0
       <origin xyz=" .16  0  0" rpy="0 0 0" />
       <parent link="${prefix}J6_link" />
       <child link="${prefix}flange" />
+    </joint>
+
+    <!-- FANUC flange coords -->
+    <link name="${prefix}fanuc_flange" />
+    <joint name="${prefix}flange-fanuc_flange" type="fixed">
+      <origin xyz="0 0 0" rpy="${radians( 180)} ${radians(-90)} ${radians( 0)}" />
+      <parent link="${prefix}flange" />
+      <child link="${prefix}fanuc_flange" />
     </joint>
 
     <!-- Attach to parent -->

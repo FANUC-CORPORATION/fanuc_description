@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2025, FANUC America Corporation
-# SPDX-FileCopyrightText: 2025, FANUC CORPORATION
+# SPDX-FileCopyrightText: 2025-2026, FANUC America Corporation
+# SPDX-FileCopyrightText: 2025-2026, FANUC CORPORATION
 #
 # SPDX-License-Identifier: Apache-2.0
 
@@ -24,7 +24,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "robot_model",
             description="The robot model to visualize (required)",
-            choices=["m20_25-18d", "m20_35-18d"],
+            choices=["m20_12-23d", "m20_25-18d", "m20_35-18d"],
         )
     ]
     robot_model = LaunchConfiguration("robot_model")

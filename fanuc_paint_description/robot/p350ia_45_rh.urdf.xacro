@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<robot name="p350ia_45_rh" xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include
+    filename="$(find fanuc_paint_description)/urdf/p350ia_45_rh_urdf_macro.xacro"
+  />
+
+  <link name="world" />
+  <link name="ee_link" />
+  <xacro:p350ia_45_rh parent="world" child="ee_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:p350ia_45_rh>
+</robot>
