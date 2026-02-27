@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <!--
-SPDX-FileCopyrightText: 2025, FANUC America Corporation
-SPDX-FileCopyrightText: 2025, FANUC CORPORATION
+SPDX-FileCopyrightText: 2025-2026, FANUC America Corporation
+SPDX-FileCopyrightText: 2025-2026, FANUC CORPORATION
 SPDX-License-Identifier: Apache-2.0
 -->
-<!-- URDF for LR Mate 7/7D (LR Mate 200iD) -->
+<!-- URDF for LR Mate/7-7D (LR Mate 200iD) -->
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
   <xacro:macro
     name="lrmate200id"
@@ -14,33 +14,33 @@ SPDX-License-Identifier: Apache-2.0
             child"
   >
 
-    <xacro:property name="j1_lower_limit" value="${radians(-170)}" />
+    <xacro:property name="j1_lower_limit" value="${radians(-180)}" />
     <xacro:property name="j2_lower_limit" value="${radians(-100)}" />
     <xacro:property name="j3_lower_limit" value="${radians(-70)}" />
     <xacro:property name="j4_lower_limit" value="${radians(-190)}" />
     <xacro:property name="j5_lower_limit" value="${radians(-125)}" />
     <xacro:property name="j6_lower_limit" value="${radians(-360)}" />
 
-    <xacro:property name="j1_upper_limit" value="${radians( 170)}" />
-    <xacro:property name="j2_upper_limit" value="${radians( 145)}" />
-    <xacro:property name="j3_upper_limit" value="${radians( 205)}" />
-    <xacro:property name="j4_upper_limit" value="${radians( 190)}" />
-    <xacro:property name="j5_upper_limit" value="${radians( 125)}" />
-    <xacro:property name="j6_upper_limit" value="${radians( 360)}" />
+    <xacro:property name="j1_upper_limit" value="${radians(180)}" />
+    <xacro:property name="j2_upper_limit" value="${radians(145)}" />
+    <xacro:property name="j3_upper_limit" value="${radians(205)}" />
+    <xacro:property name="j4_upper_limit" value="${radians(190)}" />
+    <xacro:property name="j5_upper_limit" value="${radians(125)}" />
+    <xacro:property name="j6_upper_limit" value="${radians(360)}" />
 
-    <xacro:property name="j1_effort_limit" value=" 450" />
-    <xacro:property name="j2_effort_limit" value=" 500" />
-    <xacro:property name="j3_effort_limit" value=" 200" />
-    <xacro:property name="j4_effort_limit" value=" 70" />
-    <xacro:property name="j5_effort_limit" value=" 40" />
-    <xacro:property name="j6_effort_limit" value=" 20" />
+    <xacro:property name="j1_effort_limit" value="500" />
+    <xacro:property name="j2_effort_limit" value="500" />
+    <xacro:property name="j3_effort_limit" value="200" />
+    <xacro:property name="j4_effort_limit" value="70" />
+    <xacro:property name="j5_effort_limit" value="40" />
+    <xacro:property name="j6_effort_limit" value="20" />
 
-    <xacro:property name="j1_velocity_limit" value="${radians( 450)}" />
-    <xacro:property name="j2_velocity_limit" value="${radians( 380)}" />
-    <xacro:property name="j3_velocity_limit" value="${radians( 520)}" />
-    <xacro:property name="j4_velocity_limit" value="${radians( 550)}" />
-    <xacro:property name="j5_velocity_limit" value="${radians( 545)}" />
-    <xacro:property name="j6_velocity_limit" value="${radians( 1000)}" />
+    <xacro:property name="j1_velocity_limit" value="${radians(450)}" />
+    <xacro:property name="j2_velocity_limit" value="${radians(380)}" />
+    <xacro:property name="j3_velocity_limit" value="${radians(520)}" />
+    <xacro:property name="j4_velocity_limit" value="${radians(550)}" />
+    <xacro:property name="j5_velocity_limit" value="${radians(545)}" />
+    <xacro:property name="j6_velocity_limit" value="${radians(1000)}" />
 
     <!-- links -->
     <link name="${prefix}base_link">
@@ -57,20 +57,19 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_lrmate_description/meshes/lrmate200id/collision/base.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 8" />
-        <origin xyz="-.02 -.01  .1" />
+        <mass value=" 5.3" />
+        <origin xyz="-.0146 -.000342  .0796" />
         <inertia
-          ixx=" 0"
-          ixy=" 0"
-          ixz=" 0"
-          iyy=" 0"
-          iyz=" 0"
-          izz=" 0"
+          ixx=" .025"
+          ixy="-.000574"
+          ixz=" .000296"
+          iyy=" .0305"
+          iyz="-.000122"
+          izz=" .0322"
         />
       </inertial>
     </link>
@@ -89,20 +88,19 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_lrmate_description/meshes/lrmate200id/collision/j1.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 4" />
-        <origin xyz=" .03  .03 -.05" />
+        <mass value=" 5.62" />
+        <origin xyz=" .0287  .000102 -.0547" />
         <inertia
-          ixx=" 0"
-          ixy=" 0"
-          ixz=" 0"
-          iyy=" 0"
-          iyz=" 0"
-          izz=" 0"
+          ixx=" .0417"
+          ixy=" .0000238"
+          ixz="-.00552"
+          iyy=" .0303"
+          iyz=" .000122"
+          izz=" .0322"
         />
       </inertial>
     </link>
@@ -121,20 +119,19 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_lrmate_description/meshes/lrmate200id/collision/j2.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 6" />
-        <origin xyz="-.01  .01  .1" />
+        <mass value=" 9.05" />
+        <origin xyz="-.00271 -.000976  .159" />
         <inertia
-          ixx=" .1"
-          ixy=" 0"
-          ixz=" 0"
-          iyy=" .1"
-          iyz=" 0"
-          izz=" 0"
+          ixx=" .159"
+          ixy=" .0000335"
+          ixz=" .000154"
+          iyy=" .136"
+          iyz="-.00108"
+          izz=" .0429"
         />
       </inertial>
     </link>
@@ -153,20 +150,19 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_lrmate_description/meshes/lrmate200id/collision/j3.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 2" />
-        <origin xyz=" .01  .01  .01" />
+        <mass value=" 2.15" />
+        <origin xyz=" .00887 -.0000626  .0171" />
         <inertia
-          ixx=" 0"
-          ixy=" 0"
-          ixz=" 0"
-          iyy=" 0"
-          iyz=" 0"
-          izz=" 0"
+          ixx=" .00585"
+          ixy="-.000046"
+          ixz="-.000622"
+          iyy=" .00665"
+          iyz="-.0000461"
+          izz=" .00669"
         />
       </inertial>
     </link>
@@ -185,20 +181,19 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_lrmate_description/meshes/lrmate200id/collision/j4.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 3" />
-        <origin xyz=" .2  .01  0" />
+        <mass value=" 2.42" />
+        <origin xyz=" .223  .00356  .00215" />
         <inertia
-          ixx=" 0"
-          ixy=" 0"
-          ixz=" 0"
-          iyy=" 0"
-          iyz=" 0"
-          izz=" 0"
+          ixx=" .00395"
+          ixy=" .000000261"
+          ixz=" .0000725"
+          iyy=" .0171"
+          iyz="-.00000947"
+          izz=" .0171"
         />
       </inertial>
     </link>
@@ -217,20 +212,19 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_lrmate_description/meshes/lrmate200id/collision/j5.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 2" />
-        <origin xyz=" .04  0  0" />
+        <mass value=" .446" />
+        <origin xyz=" .0177  .0025 -.00000419" />
         <inertia
-          ixx=" 0"
-          ixy=" 0"
-          ixz=" 0"
-          iyy=" 0"
-          iyz=" 0"
-          izz=" 0"
+          ixx=" .000339"
+          ixy=" .0000187"
+          ixz="-.0000000209"
+          iyy=" .000601"
+          iyz="-.0000000171"
+          izz=" .000563"
         />
       </inertial>
     </link>
@@ -249,20 +243,19 @@ SPDX-License-Identifier: Apache-2.0
         <geometry>
           <mesh
             filename="package://fanuc_lrmate_description/meshes/lrmate200id/collision/j6.stl"
-            scale="0.001 0.001 0.001"
           />
         </geometry>
       </collision>
       <inertial>
-        <mass value=" 0" />
-        <origin xyz=" 0  0  0" />
+        <mass value=" .0134" />
+        <origin xyz=" .074  3.35E-18 -4.88E-19" />
         <inertia
-          ixx=" 0"
-          ixy=" 0"
-          ixz=" 0"
-          iyy=" 0"
-          iyz=" 0"
-          izz=" 0"
+          ixx=" .00000275"
+          ixy=" 7.09E-21"
+          ixz="-4.25E-22"
+          iyy=" .00000153"
+          iyz="-1.05E-22"
+          izz=" .00000153"
         />
       </inertial>
     </link>
@@ -360,6 +353,14 @@ SPDX-License-Identifier: Apache-2.0
       <origin xyz=" .08  0  0" rpy="0 0 0" />
       <parent link="${prefix}J6_link" />
       <child link="${prefix}flange" />
+    </joint>
+
+    <!-- FANUC flange coords -->
+    <link name="${prefix}fanuc_flange" />
+    <joint name="${prefix}flange-fanuc_flange" type="fixed">
+      <origin xyz="0 0 0" rpy="${radians( 180)} ${radians(-90)} ${radians( 0)}" />
+      <parent link="${prefix}flange" />
+      <child link="${prefix}fanuc_flange" />
     </joint>
 
     <!-- Attach to parent -->

@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2025, FANUC America Corporation
-# SPDX-FileCopyrightText: 2025, FANUC CORPORATION
+# SPDX-FileCopyrightText: 2025-2026, FANUC America Corporation
+# SPDX-FileCopyrightText: 2025-2026, FANUC CORPORATION
 #
 # SPDX-License-Identifier: Apache-2.0
 
@@ -24,7 +24,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "robot_model",
             description="The robot model to visualize (required)",
-            choices=["r2000ic_125l"],
+            choices=["r2000ic_100p", "r2000ic_100ph", "r2000ic_125l", "r2000ic_165f", "r2000ic_165r", "r2000ic_190s", "r2000ic_190u", "r2000ic_210f", "r2000ic_210l", "r2000ic_210r", "r2000ic_210we", "r2000ic_220u", "r2000ic_240f", "r2000ic_270f", "r2000ic_270r", "r2000id_100fh", "r2000id_165fh", "r2000id_210fh"],
         )
     ]
     robot_model = LaunchConfiguration("robot_model")

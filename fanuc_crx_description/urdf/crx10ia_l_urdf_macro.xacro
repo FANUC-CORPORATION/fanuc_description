@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!--
-SPDX-FileCopyrightText: 2025, FANUC America Corporation
-SPDX-FileCopyrightText: 2025, FANUC CORPORATION
+SPDX-FileCopyrightText: 2025-2026, FANUC America Corporation
+SPDX-FileCopyrightText: 2025-2026, FANUC CORPORATION
 SPDX-License-Identifier: Apache-2.0
 -->
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
@@ -382,6 +382,14 @@ SPDX-License-Identifier: Apache-2.0
       <origin xyz="${l_6} 0 0" rpy="0 0 0" />
       <parent link="${prefix}J6_link" />
       <child link="${prefix}flange" />
+    </joint>
+
+    <!-- FANUC flange coords -->
+    <link name="${prefix}fanuc_flange" />
+    <joint name="${prefix}flange-fanuc_flange" type="fixed">
+      <origin xyz="0 0 0" rpy="${radians( 180)} ${radians(-90)} ${radians( 0)}" />
+      <parent link="${prefix}flange" />
+      <child link="${prefix}fanuc_flange" />
     </joint>
 
     <!-- Attach to parent -->
