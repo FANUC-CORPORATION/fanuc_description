@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 -->
 <package format="3">
   <name>fanuc_m800_description</name>
-  <version>1.2.0</version>
+  <version>1.2.2</version>
   <description>M-800 series kinematics information.</description>
 
   <maintainer
