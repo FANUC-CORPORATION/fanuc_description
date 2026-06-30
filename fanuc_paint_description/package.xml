@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 -->
 <package format="3">
   <name>fanuc_paint_description</name>
-  <version>2.1.0</version>
+  <version>2.1.1</version>
   <description>Paint series kinematics information.</description>
 
   <maintainer
