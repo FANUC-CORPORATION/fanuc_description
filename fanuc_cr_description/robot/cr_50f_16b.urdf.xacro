@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<robot name="cr_50f_16b" xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include
+    filename="$(find fanuc_cr_description)/urdf/cr_50f_16b_urdf_macro.xacro"
+  />
+
+  <link name="world" />
+  <link name="ee_link" />
+  <xacro:cr_50f_16b parent="world" child="ee_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:cr_50f_16b>
+</robot>
